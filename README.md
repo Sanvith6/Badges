@@ -24,9 +24,9 @@ Files to create with brief expected contents:
 - SECURITY.md — vulnerability reporting policy.
 Example badge markdown lines that should be added to README (exact text):
 ```md
-![License](https://img.shields.io/github/license/Sanvith6/Badges)
+![License](https://img.shields.io/github/license/{OWNER}/{REPO})
 ![Python](https://img.shields.io/badge/python-3.10%2B-blue)
-![Repo Size](https://img.shields.io/github/repo-size/Sanvith6/Badges)
+![Repo Size](https://img.shields.io/github/repo-size/{OWNER}/{REPO})
 ```
 
 2. Stage 2 — Add minimal library and CLI with tests
@@ -59,6 +59,7 @@ Example badge markdown lines that should be added to README (exact text):
 3. Stage 3 — Add GitHub Actions CI + coverage upload
 Goal/badges enabled: Build/CI badge, coverage badge, GitHub Actions badge.
 Exact Copilot instruction to generate files/changes (paste-ready prompt text):
+````text
 Create GitHub Actions CI workflow at .github/workflows/ci.yml.
 Use this exact YAML:
 
@@ -98,18 +99,20 @@ jobs:
 
 Also add pytest-cov to dev dependencies in pyproject.toml.
 Commit with message: "ci: add github actions workflow with coverage enforcement".
+````
 Files to create with brief expected contents:
 - .github/workflows/ci.yml — matrix CI, lint, tests, coverage upload.
 - pyproject.toml — updated dev dependencies for ruff/pytest/pytest-cov.
 Example badge markdown lines that should be added to README (exact text):
 ```md
-![CI](https://github.com/Sanvith6/Badges/actions/workflows/ci.yml/badge.svg)
-![codecov](https://codecov.io/gh/Sanvith6/Badges/branch/main/graph/badge.svg)
+![CI](https://github.com/{OWNER}/{REPO}/actions/workflows/ci.yml/badge.svg)
+![codecov](https://codecov.io/gh/{OWNER}/{REPO}/branch/main/graph/badge.svg)
 ```
 
 4. Stage 4 — Add security automation (CodeQL + Dependabot)
 Goal/badges enabled: CodeQL badge, Dependabot badge, security policy credibility.
 Exact Copilot instruction to generate files/changes (paste-ready prompt text):
+````text
 Add security automation files.
 
 1) Create .github/workflows/codeql.yml with this YAML:
@@ -163,18 +166,20 @@ updates:
 ```
 
 Commit with message: "security: add codeql and dependabot automation".
+````
 Files to create with brief expected contents:
 - .github/workflows/codeql.yml — static analysis workflow.
 - .github/dependabot.yml — dependency update policy.
 Example badge markdown lines that should be added to README (exact text):
 ```md
-![CodeQL](https://github.com/Sanvith6/Badges/actions/workflows/codeql.yml/badge.svg)
+![CodeQL](https://github.com/{OWNER}/{REPO}/actions/workflows/codeql.yml/badge.svg)
 ![Dependabot](https://img.shields.io/badge/dependabot-enabled-025E8C?logo=dependabot)
 ```
 
 5. Stage 5 — Add release automation and package publishing
 Goal/badges enabled: Release badge, PyPI version badge, publish workflow badge.
 Exact Copilot instruction to generate files/changes (paste-ready prompt text):
+````text
 Set up automated release publishing.
 
 1) Create .github/workflows/release.yml:
@@ -208,14 +213,15 @@ jobs:
 2) Ensure pyproject.toml contains version (e.g., 0.1.0) and project URLs.
 3) Add CHANGELOG.md with Keep a Changelog format and Semantic Versioning notes.
 Commit with message: "release: add tag-triggered pypi publishing workflow".
+````
 Files to create with brief expected contents:
 - .github/workflows/release.yml — publish package when tag is pushed.
 - CHANGELOG.md — changelog and semver policy.
 - pyproject.toml — version and URL metadata.
 Example badge markdown lines that should be added to README (exact text):
 ```md
-![Release](https://img.shields.io/github/v/release/Sanvith6/Badges)
-![PyPI](https://img.shields.io/pypi/v/badgeforge)
+![Release](https://img.shields.io/github/v/release/{OWNER}/{REPO})
+![PyPI](https://img.shields.io/pypi/v/{PYPI_PACKAGE})
 ```
 
 6. Stage 6 — Add community health and issue/PR templates
@@ -240,9 +246,9 @@ Files to create with brief expected contents:
 - .github/SUPPORT.md — support channels.
 Example badge markdown lines that should be added to README (exact text):
 ```md
-![Contributors](https://img.shields.io/github/contributors/Sanvith6/Badges)
-![Issues](https://img.shields.io/github/issues/Sanvith6/Badges)
-![Pull Requests](https://img.shields.io/github/issues-pr/Sanvith6/Badges)
+![Contributors](https://img.shields.io/github/contributors/{OWNER}/{REPO})
+![Issues](https://img.shields.io/github/issues/{OWNER}/{REPO})
+![Pull Requests](https://img.shields.io/github/issues-pr/{OWNER}/{REPO})
 ```
 
 7. Stage 7 — Final README badge block, usage docs, and quality checks
@@ -267,13 +273,13 @@ Files to create with brief expected contents:
 - docs/architecture.md — package architecture and extension points.
 Example badge markdown lines that should be added to README (exact text):
 ```md
-![CI](https://github.com/Sanvith6/Badges/actions/workflows/ci.yml/badge.svg)
-![CodeQL](https://github.com/Sanvith6/Badges/actions/workflows/codeql.yml/badge.svg)
-![codecov](https://codecov.io/gh/Sanvith6/Badges/branch/main/graph/badge.svg)
-![License](https://img.shields.io/github/license/Sanvith6/Badges)
-![Release](https://img.shields.io/github/v/release/Sanvith6/Badges)
-![PyPI](https://img.shields.io/pypi/v/badgeforge)
-![Contributors](https://img.shields.io/github/contributors/Sanvith6/Badges)
+![CI](https://github.com/{OWNER}/{REPO}/actions/workflows/ci.yml/badge.svg)
+![CodeQL](https://github.com/{OWNER}/{REPO}/actions/workflows/codeql.yml/badge.svg)
+![codecov](https://codecov.io/gh/{OWNER}/{REPO}/branch/main/graph/badge.svg)
+![License](https://img.shields.io/github/license/{OWNER}/{REPO})
+![Release](https://img.shields.io/github/v/release/{OWNER}/{REPO})
+![PyPI](https://img.shields.io/pypi/v/{PYPI_PACKAGE})
+![Contributors](https://img.shields.io/github/contributors/{OWNER}/{REPO})
 ```
 
 8. Stage 8 — Repository settings, topics, and badge activation checklist
@@ -298,7 +304,7 @@ Files to create with brief expected contents:
 - README.md — final activation checklist appended.
 Example badge markdown lines that should be added to README (exact text):
 ```md
-![GitHub last commit](https://img.shields.io/github/last-commit/Sanvith6/Badges)
-![GitHub Workflow Status (with event)](https://img.shields.io/github/actions/workflow/status/Sanvith6/Badges/ci.yml?event=push)
-![GitHub Discussions](https://img.shields.io/github/discussions/Sanvith6/Badges)
+![GitHub last commit](https://img.shields.io/github/last-commit/{OWNER}/{REPO})
+![GitHub Workflow Status (with event)](https://img.shields.io/github/actions/workflow/status/{OWNER}/{REPO}/ci.yml?event=push)
+![GitHub Discussions](https://img.shields.io/github/discussions/{OWNER}/{REPO})
 ```
