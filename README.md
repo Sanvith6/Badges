@@ -60,10 +60,10 @@ Example badge markdown lines that should be added to README (exact text):
 3. Stage 3 — Add GitHub Actions CI + coverage upload
 Goal/badges enabled: Build/CI badge, coverage badge, GitHub Actions badge.
 Exact Copilot instruction to generate files/changes (paste-ready prompt text):
-```text
 Create GitHub Actions CI workflow at .github/workflows/ci.yml.
 Use this exact YAML:
 
+```yaml
 name: CI
 on:
   push:
@@ -95,10 +95,10 @@ jobs:
           files: ./coverage.xml
           fail_ci_if_error: true
           token: ${{ secrets.CODECOV_TOKEN }}
+```
 
 Also add pytest-cov to dev dependencies in pyproject.toml.
 Commit with message: "ci: add github actions workflow with coverage enforcement".
-```
 Files to create with brief expected contents:
 - .github/workflows/ci.yml — matrix CI, lint, tests, coverage upload.
 - pyproject.toml — updated dev dependencies for ruff/pytest/pytest-cov.
@@ -112,10 +112,10 @@ Example badge markdown lines that should be added to README (exact text):
 4. Stage 4 — Add security automation (CodeQL + Dependabot)
 Goal/badges enabled: CodeQL badge, Dependabot badge, security policy credibility.
 Exact Copilot instruction to generate files/changes (paste-ready prompt text):
-```text
 Add security automation files.
 
 1) Create .github/workflows/codeql.yml with this YAML:
+```yaml
 name: "CodeQL"
 on:
   push:
@@ -147,8 +147,10 @@ jobs:
         uses: github/codeql-action/autobuild@v3
       - name: Perform CodeQL Analysis
         uses: github/codeql-action/analyze@v3
+```
 
 2) Create .github/dependabot.yml with this YAML:
+```yaml
 version: 2
 updates:
   - package-ecosystem: "pip"
@@ -160,9 +162,9 @@ updates:
     directory: "/"
     schedule:
       interval: "weekly"
+```
 
 Commit with message: "security: add codeql and dependabot automation".
-```
 Files to create with brief expected contents:
 - .github/workflows/codeql.yml — static analysis workflow.
 - .github/dependabot.yml — dependency update policy.
@@ -175,10 +177,10 @@ Example badge markdown lines that should be added to README (exact text):
 5. Stage 5 — Add release automation and package publishing
 Goal/badges enabled: Release badge, PyPI version badge, publish workflow badge.
 Exact Copilot instruction to generate files/changes (paste-ready prompt text):
-```text
 Set up automated release publishing.
 
 1) Create .github/workflows/release.yml:
+```yaml
 name: Release
 on:
   push:
@@ -203,11 +205,11 @@ jobs:
         run: python -m build
       - name: Publish to PyPI
         uses: pypa/gh-action-pypi-publish@release/v1
+```
 
 2) Ensure pyproject.toml contains version (e.g., 0.1.0) and project URLs.
 3) Add CHANGELOG.md with Keep a Changelog format and Semantic Versioning notes.
 Commit with message: "release: add tag-triggered pypi publishing workflow".
-```
 Files to create with brief expected contents:
 - .github/workflows/release.yml — publish package when tag is pushed.
 - CHANGELOG.md — changelog and semver policy.
