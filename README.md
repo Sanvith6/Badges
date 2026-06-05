@@ -25,7 +25,7 @@ Files to create with brief expected contents:
 Example badge markdown lines that should be added to README (exact text):
 ```md
 ![License](https://img.shields.io/github/license/Sanvith6/Badges)
-![Python](https://img.shields.io/badge/python-3.11%2B-blue)
+![Python](https://img.shields.io/badge/python-3.10%2B-blue)
 ![Repo Size](https://img.shields.io/github/repo-size/Sanvith6/Badges)
 ```
 
@@ -54,7 +54,6 @@ Files to create with brief expected contents:
 Example badge markdown lines that should be added to README (exact text):
 ```md
 ![Tests](https://img.shields.io/badge/tests-pytest-informational)
-![CI](https://github.com/Sanvith6/Badges/actions/workflows/ci.yml/badge.svg)
 ```
 
 3. Stage 3 — Add GitHub Actions CI + coverage upload
@@ -106,7 +105,6 @@ Example badge markdown lines that should be added to README (exact text):
 ```md
 ![CI](https://github.com/Sanvith6/Badges/actions/workflows/ci.yml/badge.svg)
 ![codecov](https://codecov.io/gh/Sanvith6/Badges/branch/main/graph/badge.svg)
-![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/Sanvith6/Badges/ci.yml)
 ```
 
 4. Stage 4 — Add security automation (CodeQL + Dependabot)
@@ -218,7 +216,6 @@ Example badge markdown lines that should be added to README (exact text):
 ```md
 ![Release](https://img.shields.io/github/v/release/Sanvith6/Badges)
 ![PyPI](https://img.shields.io/pypi/v/badgeforge)
-![GitHub tag](https://img.shields.io/github/v/tag/Sanvith6/Badges)
 ```
 
 6. Stage 6 — Add community health and issue/PR templates
