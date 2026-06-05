@@ -17,11 +17,11 @@ Requirements:
 - Commit with message: "chore: initialize python project foundation".
 ```
 Files to create with brief expected contents:
-- /tmp/workspace/Sanvith6/Badges/pyproject.toml — package metadata, build system, pytest and coverage settings.
-- /tmp/workspace/Sanvith6/Badges/.editorconfig — consistent formatting rules.
-- /tmp/workspace/Sanvith6/Badges/CODE_OF_CONDUCT.md — Contributor Covenant summary.
-- /tmp/workspace/Sanvith6/Badges/CONTRIBUTING.md — setup, test, and PR steps.
-- /tmp/workspace/Sanvith6/Badges/SECURITY.md — vulnerability reporting policy.
+- pyproject.toml — package metadata, build system, pytest and coverage settings.
+- .editorconfig — consistent formatting rules.
+- CODE_OF_CONDUCT.md — Contributor Covenant summary.
+- CONTRIBUTING.md — setup, test, and PR steps.
+- SECURITY.md — vulnerability reporting policy.
 Example badge markdown lines that should be added to README (exact text):
 ```md
 ![License](https://img.shields.io/github/license/Sanvith6/Badges)
@@ -46,11 +46,11 @@ Target >= 90% coverage from tests.
 Commit with message: "feat: add core module, cli, and pytest suite".
 ```
 Files to create with brief expected contents:
-- /tmp/workspace/Sanvith6/Badges/src/badgeforge/core.py — core arithmetic logic with safe divide.
-- /tmp/workspace/Sanvith6/Badges/src/badgeforge/cli.py — command-line interface.
-- /tmp/workspace/Sanvith6/Badges/src/badgeforge/__init__.py — public exports.
-- /tmp/workspace/Sanvith6/Badges/tests/test_core.py — unit tests for all functions and edge cases.
-- /tmp/workspace/Sanvith6/Badges/tests/test_cli.py — CLI tests using subprocess or pytest capsys.
+- src/badgeforge/core.py — core arithmetic logic with safe divide.
+- src/badgeforge/cli.py — command-line interface.
+- src/badgeforge/__init__.py — public exports.
+- tests/test_core.py — unit tests for all functions and edge cases.
+- tests/test_cli.py — CLI tests using subprocess or pytest capsys.
 Example badge markdown lines that should be added to README (exact text):
 ```md
 ![Tests](https://img.shields.io/badge/tests-pytest-informational)
@@ -100,8 +100,8 @@ Also add pytest-cov to dev dependencies in pyproject.toml.
 Commit with message: "ci: add github actions workflow with coverage enforcement".
 ```
 Files to create with brief expected contents:
-- /tmp/workspace/Sanvith6/Badges/.github/workflows/ci.yml — matrix CI, lint, tests, coverage upload.
-- /tmp/workspace/Sanvith6/Badges/pyproject.toml — updated dev dependencies for ruff/pytest/pytest-cov.
+- .github/workflows/ci.yml — matrix CI, lint, tests, coverage upload.
+- pyproject.toml — updated dev dependencies for ruff/pytest/pytest-cov.
 Example badge markdown lines that should be added to README (exact text):
 ```md
 ![CI](https://github.com/Sanvith6/Badges/actions/workflows/ci.yml/badge.svg)
@@ -164,8 +164,8 @@ updates:
 Commit with message: "security: add codeql and dependabot automation".
 ```
 Files to create with brief expected contents:
-- /tmp/workspace/Sanvith6/Badges/.github/workflows/codeql.yml — static analysis workflow.
-- /tmp/workspace/Sanvith6/Badges/.github/dependabot.yml — dependency update policy.
+- .github/workflows/codeql.yml — static analysis workflow.
+- .github/dependabot.yml — dependency update policy.
 Example badge markdown lines that should be added to README (exact text):
 ```md
 ![CodeQL](https://github.com/Sanvith6/Badges/actions/workflows/codeql.yml/badge.svg)
@@ -209,9 +209,9 @@ jobs:
 Commit with message: "release: add tag-triggered pypi publishing workflow".
 ```
 Files to create with brief expected contents:
-- /tmp/workspace/Sanvith6/Badges/.github/workflows/release.yml — publish package when tag is pushed.
-- /tmp/workspace/Sanvith6/Badges/CHANGELOG.md — changelog and semver policy.
-- /tmp/workspace/Sanvith6/Badges/pyproject.toml — version and URL metadata.
+- .github/workflows/release.yml — publish package when tag is pushed.
+- CHANGELOG.md — changelog and semver policy.
+- pyproject.toml — version and URL metadata.
 Example badge markdown lines that should be added to README (exact text):
 ```md
 ![Release](https://img.shields.io/github/v/release/Sanvith6/Badges)
@@ -235,10 +235,10 @@ In pull_request_template.md include checklist for tests, docs, and changelog upd
 Commit with message: "docs: add issue and pull request templates".
 ```
 Files to create with brief expected contents:
-- /tmp/workspace/Sanvith6/Badges/.github/ISSUE_TEMPLATE/bug_report.yml — structured bug report form.
-- /tmp/workspace/Sanvith6/Badges/.github/ISSUE_TEMPLATE/feature_request.yml — structured feature request form.
-- /tmp/workspace/Sanvith6/Badges/.github/pull_request_template.md — PR checklist.
-- /tmp/workspace/Sanvith6/Badges/.github/SUPPORT.md — support channels.
+- .github/ISSUE_TEMPLATE/bug_report.yml — structured bug report form.
+- .github/ISSUE_TEMPLATE/feature_request.yml — structured feature request form.
+- .github/pull_request_template.md — PR checklist.
+- .github/SUPPORT.md — support channels.
 Example badge markdown lines that should be added to README (exact text):
 ```md
 ![Contributors](https://img.shields.io/github/contributors/Sanvith6/Badges)
@@ -264,8 +264,8 @@ Also add docs/architecture.md describing module layout.
 Commit with message: "docs: finalize readme badges and developer documentation".
 ```
 Files to create with brief expected contents:
-- /tmp/workspace/Sanvith6/Badges/README.md — complete documentation with badge block.
-- /tmp/workspace/Sanvith6/Badges/docs/architecture.md — package architecture and extension points.
+- README.md — complete documentation with badge block.
+- docs/architecture.md — package architecture and extension points.
 Example badge markdown lines that should be added to README (exact text):
 ```md
 ![CI](https://github.com/Sanvith6/Badges/actions/workflows/ci.yml/badge.svg)
@@ -296,7 +296,7 @@ Provide a final operator checklist in README.md called "Repository Activation St
 Then commit with message: "docs: add repository activation checklist for badges".
 ```
 Files to create with brief expected contents:
-- /tmp/workspace/Sanvith6/Badges/README.md — final activation checklist appended.
+- README.md — final activation checklist appended.
 Example badge markdown lines that should be added to README (exact text):
 ```md
 ![GitHub last commit](https://img.shields.io/github/last-commit/Sanvith6/Badges)
