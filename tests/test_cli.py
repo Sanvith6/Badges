@@ -1,35 +1,33 @@
-import subprocess
-import sys
+from badges import cli
 
 
-def run_cli(*args: str) -> subprocess.CompletedProcess[str]:
-    return subprocess.run(
-        [sys.executable, "-m", "badges.cli", *args],
-        check=False,
-        capture_output=True,
-        text=True,
-    )
+def test_cli_add(capsys) -> None:
+    exit_code = cli.main(["add", "1.5", "2.5"])
+    captured = capsys.readouterr()
+    assert exit_code == 0
+    assert captured.out.strip() == "4.0"
+    assert captured.err == ""
 
 
-def test_cli_add() -> None:
-    result = run_cli("add", "1.5", "2.5")
-    assert result.returncode == 0
-    assert result.stdout.strip() == "4.0"
+def test_cli_subtract(capsys) -> None:
+    exit_code = cli.main(["subtract", "10", "3"])
+    captured = capsys.readouterr()
+    assert exit_code == 0
+    assert captured.out.strip() == "7.0"
+    assert captured.err == ""
 
 
-def test_cli_subtract() -> None:
-    result = run_cli("subtract", "10", "3")
-    assert result.returncode == 0
-    assert result.stdout.strip() == "7.0"
+def test_cli_divide(capsys) -> None:
+    exit_code = cli.main(["divide", "9", "3"])
+    captured = capsys.readouterr()
+    assert exit_code == 0
+    assert captured.out.strip() == "3.0"
+    assert captured.err == ""
 
 
-def test_cli_divide() -> None:
-    result = run_cli("divide", "9", "3")
-    assert result.returncode == 0
-    assert result.stdout.strip() == "3.0"
-
-
-def test_cli_divide_by_zero() -> None:
-    result = run_cli("divide", "1", "0")
-    assert result.returncode == 1
-    assert "division by zero" in result.stderr.lower()
+def test_cli_divide_by_zero(capsys) -> None:
+    exit_code = cli.main(["divide", "1", "0"])
+    captured = capsys.readouterr()
+    assert exit_code == 1
+    assert captured.out == ""
+    assert "division by zero" in captured.err.lower()
