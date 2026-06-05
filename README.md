@@ -105,7 +105,7 @@ jobs:
 
 Also add pytest-cov to dev dependencies in pyproject.toml.
 Commit with message: "ci: add github actions workflow with coverage enforcement".
-Note: if CODECOV_TOKEN is not created yet, add it in Stage 8 before expecting successful coverage uploads.
+Note: CODECOV_TOKEN must be configured (see Stage 8, step 5) before coverage uploads will succeed.
 Optional: move the coverage threshold into pyproject.toml to keep one source of truth.
 ````
 Files to create with brief expected contents:
@@ -220,7 +220,7 @@ jobs:
 
 2) Ensure pyproject.toml contains version (e.g., 0.1.0) and project URLs.
 3) Add CHANGELOG.md with Keep a Changelog format and Semantic Versioning notes.
-4) Configure PyPI Trusted Publisher for this repository/workflow before the first tagged release.
+4) Configure PyPI Trusted Publisher before first release (PyPI project settings -> Publishing -> Add a new publisher for this repo/workflow).
 Commit with message: "release: add tag-triggered pypi publishing workflow".
 ````
 Files to create with brief expected contents:
