@@ -264,7 +264,7 @@ Exact Copilot instruction to generate files/changes (paste-ready prompt text):
 Rewrite README.md into a polished open-source landing page including:
 - Project title and one-line value proposition
 - Badge block at top (CI, CodeQL, Codecov, License, Release, PyPI, Contributors)
-- Installation section (pip install {PROJECT_NAME})
+- Installation section (pip install {PYPI_PACKAGE})
 - Usage examples for library and CLI
 - Development section (lint/test commands)
 - Coverage policy statement (CI fails if coverage < 90%)
