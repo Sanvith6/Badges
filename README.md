@@ -1,10 +1,16 @@
 Chosen stack: Python with pytest.
 
+Placeholder values to replace before use:
+- {OWNER}: GitHub account or organization name.
+- {REPO}: GitHub repository name.
+- {PROJECT_NAME}: Python package/module name.
+- {PYPI_PACKAGE}: Published package name on PyPI.
+
 1. Stage 1 — Initialize repository foundation
 Goal/badges enabled: License badge, Python version badge, repo quality/community readiness.
 Exact Copilot instruction to generate files/changes (paste-ready prompt text):
 ```text
-Create the initial Python library repository scaffold for a public open-source project named "badgeforge".
+Create the initial Python library repository scaffold for a public open-source project named "{PROJECT_NAME}".
 
 Requirements:
 - Use src layout.
@@ -33,22 +39,22 @@ Example badge markdown lines that should be added to README (exact text):
 Goal/badges enabled: Test status badge, pytest badge, basic package usefulness.
 Exact Copilot instruction to generate files/changes (paste-ready prompt text):
 ```text
-Implement a minimal but complete Python package called badgeforge with:
-- src/badgeforge/core.py containing pure functions:
+Implement a minimal but complete Python package called {PROJECT_NAME} with:
+- src/{PROJECT_NAME}/core.py containing pure functions:
   - add(a: float, b: float) -> float
   - subtract(a: float, b: float) -> float
   - divide(a: float, b: float) -> float (raise ValueError on division by zero)
-- src/badgeforge/cli.py with argparse commands: add, subtract, divide.
-- src/badgeforge/__init__.py exporting functions.
+- src/{PROJECT_NAME}/cli.py with argparse commands: add, subtract, divide.
+- src/{PROJECT_NAME}/__init__.py exporting functions.
 - tests/test_core.py covering success and error paths.
 - tests/test_cli.py validating CLI output and exit codes.
 Target >= 90% coverage from tests.
 Commit with message: "feat: add core module, cli, and pytest suite".
 ```
 Files to create with brief expected contents:
-- src/badgeforge/core.py — core arithmetic logic with safe divide.
-- src/badgeforge/cli.py — command-line interface.
-- src/badgeforge/__init__.py — public exports.
+- src/{PROJECT_NAME}/core.py — core arithmetic logic with safe divide.
+- src/{PROJECT_NAME}/cli.py — command-line interface.
+- src/{PROJECT_NAME}/__init__.py — public exports.
 - tests/test_core.py — unit tests for all functions and edge cases.
 - tests/test_cli.py — CLI tests using subprocess or pytest capsys.
 Example badge markdown lines that should be added to README (exact text):
@@ -88,7 +94,7 @@ jobs:
       - name: Lint
         run: ruff check .
       - name: Test with coverage threshold
-        run: pytest --cov=badgeforge --cov-report=xml --cov-report=term-missing --cov-fail-under=90
+        run: pytest --cov={PROJECT_NAME} --cov-report=xml --cov-report=term-missing --cov-fail-under=90
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v4
         with:
@@ -258,7 +264,7 @@ Exact Copilot instruction to generate files/changes (paste-ready prompt text):
 Rewrite README.md into a polished open-source landing page including:
 - Project title and one-line value proposition
 - Badge block at top (CI, CodeQL, Codecov, License, Release, PyPI, Contributors)
-- Installation section (pip install badgeforge)
+- Installation section (pip install {PROJECT_NAME})
 - Usage examples for library and CLI
 - Development section (lint/test commands)
 - Coverage policy statement (CI fails if coverage < 90%)
