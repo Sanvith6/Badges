@@ -26,7 +26,7 @@ jobs:
       - name: Test with coverage threshold
         run: pytest --cov=badges --cov-report=xml --cov-report=term-missing --cov-fail-under=90
       - name: Upload coverage to Codecov
-        uses: codecov/codecov-action@v4
+        uses: codecov/codecov-action@v7
         with:
           files: ./coverage.xml
           fail_ci_if_error: true
